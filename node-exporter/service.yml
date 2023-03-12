@@ -1,1 +1,15 @@
-service.yml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: node-exporter
+  name: node-exporter
+spec:
+  type: ClusterIP 
+  ports:
+  - name: https
+    port: 9100
+    targetPort: 9100
+  selector:
+    app: node-exporter
